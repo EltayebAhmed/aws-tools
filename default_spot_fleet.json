@@ -1,0 +1,67 @@
+{
+    "IamFleetRole": "arn:aws:iam::730335180928:role/aws-ec2-spot-fleet-tagging-role",
+    "AllocationStrategy": "capacityOptimized",
+    "TargetCapacity": 1,
+    "ValidFrom": "2025-04-23T15:27:35.000Z",
+    "ValidUntil": "2026-04-23T15:27:35.000Z",
+    "TerminateInstancesWithExpiration": true,
+    "Type": "request",
+    "LaunchSpecifications": [
+        {
+            "ImageId": "ami-0b86aaed8ef90e45f",
+            "KeyName": "Eltayeb-AWS",
+            "BlockDeviceMappings": [
+                {
+                    "DeviceName": "/dev/xvda",
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "VolumeSize": 256,
+                        "VolumeType": "gp2",
+                        "Encrypted": false
+                    }
+                }
+            ],
+            "UserData": "IyEvYmluL2Jhc2gKYmxhYmxhYmxh",
+            "TagSpecifications": [
+                {
+                    "ResourceType": "instance",
+                    "Tags": [
+                        {
+                            "Key": "Owner",
+                            "Value": "Eltayeb"
+                        },
+                        {
+                            "Key": "Name",
+                            "Value": "Eltayeb-BBC-baseline"
+                        }
+                    ]
+                }
+            ],
+            "IamInstanceProfile": {
+                "Arn": "arn:aws:iam::730335180928:instance-profile/EFS_access"
+            },
+            "SubnetId": "subnet-05920ffe57e98f82f, subnet-0f5d388cc8b7953b4, subnet-0753a5be4c1d81a87, subnet-0b88e817ecef47e06, subnet-047261370ae38bd98, subnet-0891e761740954725",
+            "SecurityGroups": [
+                {
+                    "GroupId": "sg-0afcff757a2360659"
+                }
+            ],
+            "InstanceType": "p5en.48xlarge"
+        }
+    ],
+    "TagSpecifications": [
+        {
+            "ResourceType": "spot-fleet-request",
+            "Tags": [
+                {
+                    "Key": "Owner",
+                    "Value": "Eltayeb"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "Eltayeb-BBC-baseline"
+                }
+            ]
+        }
+    ]
+}
