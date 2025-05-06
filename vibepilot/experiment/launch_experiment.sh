@@ -1,0 +1,2 @@
+#/bin/bash
+python3.11 /mount/ai-research-ox-llms-as-agents/aws_tools/launch_aws_spot_fleet.py --launch_template=/mount/ai-research-ox-llms-as-agents/aws_tools/default_spot_fleet.json --user-data=/mount/ai-research-ox-llms-as-agents/aws_tools/vibepilot/experiment/experiment_payload.sh --instance-name=vibepilot-test --ami-id=ami-085386e29e44dacd7 --fleet-type=maintain --shutdown-on-finish --terminate-fleet-on-finish-controller=http://52.23.181.222:7451 --instance-types="t2.micro"
