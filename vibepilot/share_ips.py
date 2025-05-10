@@ -45,7 +45,7 @@ def _spot_requests():
     return jsonify(spot_requests()), 200, {'Content-Type': 'application/json'}
 
 def spot_requests():
-    ec2 = boto3.client('ec2')
+    ec2 = boto3.client('ec2', region_name='us-east-1')
     resp = ec2.describe_spot_instance_requests(
         Filters=[{"Name": "state", "Values": ["active"]}]
     )
@@ -66,7 +66,7 @@ def _list_instances():
     return jsonify(list_instances()), 200, {'Content-Type': 'application/json'}
 
 def list_instances():
-    ec2 = boto3.client('ec2')
+    ec2 = boto3.client('ec2', region_name='us-east-1')
     resp = ec2.describe_instances()
     result = {}
     for reservation in resp.get("Reservations", []):
