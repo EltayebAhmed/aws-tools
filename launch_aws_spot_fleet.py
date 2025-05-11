@@ -40,7 +40,7 @@ class AwsSpotInstanceRequest:
 
     shutdown_on_finish: bool = True
     """Shutdown the instance when the job is finished."""
-    terminate_fleet_on_finish_controller: Optional[str] = "http://52.23.181.222:7451"
+    terminate_fleet_on_finish_controller: Optional[str] = None
     """IP/dns address of controller. If supplied request the controller to 
     terminate the fleet when the job is finished."""
 
